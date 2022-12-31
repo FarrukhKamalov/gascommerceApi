@@ -11,9 +11,19 @@ const CategoryCreate = async(req,res) => {
     })
 }
 
+const CategoriesGet = async(req,res)=>{
+    const Categories = await Category.find({});
+
+    res.status(200).json({
+        success: true,
+        data: Categories
+    })
+}
+
 
 
 
 module.exports = {
-    CategoryCreate
+    CategoryCreate,
+    CategoriesGet
 }

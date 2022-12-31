@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const {CreatedCategory} = require('../controller/Category.controller')
+const {CreatedCategory, GetCategories} = require('../controller/Category.controller')
 
-router.post('/', CreatedCategory)
-
+router.post('/', CreatedCategory);
+router.get('/', GetCategories);
 
 module.exports = router;

@@ -60,10 +60,15 @@ const DeleteProduct = async (req, res) => {
   });
 };
 
+
+const EditProduct = async(req,res)=>{
+  await Product.findByIdAndUpdate(req.params.id, req.body)
+}
 module.exports = {
   GetAllProduct,
   GetByIdProduct,
   ProductAdd,
   DeleteProduct,
   getProductByCategory
+  
 };

@@ -12,4 +12,7 @@ router.get("/:id", GetIdProduct);
 router.post("/", productAdd);
 router.delete('/:id', deleteProduct)
 router.get("/category/:id",getByCatIdProduct );
+router.put('/:id')
+
+
 module.exports = router;

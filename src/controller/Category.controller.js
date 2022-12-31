@@ -1,4 +1,4 @@
-const { CategoryCreate } = require("../service/category.service");
+const { CategoryCreate, CategoriesGet } = require("../service/category.service");
 
 const CreatedCategory = async (req, res) => {
     try {
@@ -11,6 +11,18 @@ const CreatedCategory = async (req, res) => {
     }
 }
 
+const GetCategories = async(req,res)=>{
+    try {
+        await CategoriesGet(req,res);
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        })
+    }
+}
+
 module.exports = {
-    CreatedCategory
+    CreatedCategory,
+    GetCategories
 }
