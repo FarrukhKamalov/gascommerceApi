@@ -20,10 +20,21 @@ const CategoriesGet = async(req,res)=>{
     })
 }
 
+const categoryDelete = async(req,res)=>{
+    const category = await Category.findByIdAndDelete({_id: req.params.id});
+
+    res.status(200).json({
+        status: true,
+        data: `DELETE category:  ${category.name}`
+    })
+
+}
+
 
 
 
 module.exports = {
     CategoryCreate,
-    CategoriesGet
+    CategoriesGet,
+    categoryDelete
 }
