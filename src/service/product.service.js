@@ -62,13 +62,17 @@ const DeleteProduct = async (req, res) => {
 
 
 const EditProduct = async(req,res)=>{
-  await Product.findByIdAndUpdate(req.params.id, req.body)
+  await Product.findByIdAndUpdate(req.params.id, req.body);
+  res.status(200).json({
+    success: true,
+    data: `Product edit ${req.params.id}`
+  });
 }
 module.exports = {
   GetAllProduct,
   GetByIdProduct,
   ProductAdd,
   DeleteProduct,
-  getProductByCategory
-  
+  getProductByCategory,
+  EditProduct
 };
